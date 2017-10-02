@@ -1,0 +1,24 @@
+{
+  "name": "react-native-toggle-button",
+  "version": "1.0.0",
+  "description": "Customizable React Native Toggle Button :p",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyaroru/RNToggle.git"
+  },
+  "keywords": [
+    "toggle",
+    "react-native",
+    "switch"
+  ],
+  "author": "Carol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyaroru/RNToggle/issues"
+  },
+  "homepage": "https://github.com/kyaroru/RNToggle#readme"
+}

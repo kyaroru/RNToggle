@@ -7,15 +7,16 @@ import {
   Text,
 } from 'react-native';
 
+const DEFAULT_CONTAINER_WIDTH = 58;
 const DEFAULT_WIDTH = 25;
 const DEFAULT_HEIGHT = 18;
-const DEFAULT_BORDER_RADIUS = 7;
+const DEFAULT_BORDER_RADIUS = 10;
 const DEFAULT_FONT_SIZE = 10;
 const DEFAULT_ACTIVE_COLOR = '#3498db';
 const DEFAULT_INACTIVE_COLOR = '#8d8d8d';
 const DEFAULT_KNOB_COLOR = 'white';
 const DEFAULT_TEXT_COLOR = 'white';
-const DEFAULT_PADDING_HORIZONTAL = 3;
+const DEFAULT_PADDING_HORIZONTAL = 5;
 
 const styles = StyleSheet.create({
   toggleContainer: {
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
   toggleButtonsContainer: {
     flexDirection: 'row',
     borderRadius: DEFAULT_BORDER_RADIUS,
+    width: DEFAULT_CONTAINER_WIDTH,
   },
   paddingLeft: {
     paddingLeft: DEFAULT_PADDING_HORIZONTAL,
@@ -79,7 +81,7 @@ function Toggle(props) {
   ];
 
   return (
-    <View asRow style={[styles.toggleButtonsContainer, isOn ? styles.selectedColor : styles.inactiveColor]}>
+    <View style={[styles.toggleButtonsContainer, isOn ? styles.selectedColor : styles.inactiveColor]}>
       {buttonsView}
     </View>
   );

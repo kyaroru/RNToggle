@@ -59,7 +59,9 @@ const styles = StyleSheet.create({
 });
 
 function Toggle(props) {
-  const { isOn, onTogglePress } = props;
+  const {
+    isOn, onTogglePress, onLabel, offLabel,
+  } = props;
 
   const buttonsView = [
     <TouchableOpacity
@@ -68,7 +70,7 @@ function Toggle(props) {
         isOn ? styles.selectedColor : styles.unselectedColor]}
       onPress={onTogglePress}
     >
-      <Text style={styles.buttonText}>{isOn ? 'ON' : ''}</Text>
+      <Text style={styles.buttonText}>{isOn ? onLabel || 'ON' : ''}</Text>
     </TouchableOpacity>,
     <TouchableOpacity
       key="left"
@@ -76,7 +78,7 @@ function Toggle(props) {
         isOn ? styles.unselectedColor : styles.inactiveColor]}
       onPress={onTogglePress}
     >
-      <Text style={styles.buttonText}>{isOn ? '' : 'OFF'}</Text>
+      <Text style={styles.buttonText}>{isOn ? '' : offLabel || 'OFF'}</Text>
     </TouchableOpacity>,
   ];
 
@@ -90,10 +92,14 @@ function Toggle(props) {
 Toggle.propTypes = {
   isOn: PropTypes.bool,
   onTogglePress: PropTypes.func.isRequired,
+  onLabel: PropTypes.string,
+  offLabel: PropTypes.string,
 };
 
 Toggle.defaultProps = {
   isOn: false,
+  onLabel: null,
+  offLabel: null,
 };
 
 export default Toggle;
